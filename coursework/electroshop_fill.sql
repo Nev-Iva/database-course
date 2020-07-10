@@ -1,14 +1,14 @@
 USE electronics;
 
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('1', 'Angus', 'Murphy', 'myriam91@example.net', '0');
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('2', 'Heaven', 'Johns', 'macejkovic.maxime@example.org', '0');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('1', 'Angus', 'Murphy', 'myriam91@example.net', '982181');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('2', 'Heaven', 'Johns', 'macejkovic.maxime@example.org', '982182');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('3', 'Deontae', 'Mueller', 'wcronin@example.org', '1');
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('4', 'Kennedy', 'Cruickshank', 'ytorphy@example.com', '0');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('4', 'Kennedy', 'Cruickshank', 'ytorphy@example.com', '982183');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('5', 'Tatum', 'Hoeger', 'yost.ryley@example.org', '36');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('6', 'Rasheed', 'Treutel', 'meaghan.monahan@example.com', '310');
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('7', 'Otilia', 'Legros', 'stella.hoeger@example.net', '0');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('7', 'Otilia', 'Legros', 'stella.hoeger@example.net', '9821890');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('8', 'Johnathon', 'Emard', 'greenfelder.baron@example.net', '982187');
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('9', 'Julien', 'Goodwin', 'pklein@example.net', '0');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('9', 'Julien', 'Goodwin', 'pklein@example.net', '456436');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('10', 'Dagmar', 'McLaughlin', 'omann@example.org', '1');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('11', 'Maida', 'Thompson', 'name.altenwerth@example.org', '84');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('12', 'Milan', 'Schulist', 'hiram.corkery@example.org', '1');
@@ -16,7 +16,7 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('1
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('14', 'Adrianna', 'Carter', 'wuckert.rowena@example.net', '126');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('15', 'Vicenta', 'Fahey', 'keira48@example.com', '293384');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('16', 'Winifred', 'Little', 'hyatt.damaris@example.net', '665157');
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('17', 'Webster', 'Langworth', 'joey85@example.com', '0');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('17', 'Webster', 'Langworth', 'joey85@example.com', '546456546');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('18', 'Ronny', 'Farrell', 'dschmidt@example.com', '481086183');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('19', 'Trent', 'Hayes', 'tgreen@example.com', '6');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('20', 'Terry', 'Schuster', 'ritchie.marty@example.com', '18');
@@ -24,25 +24,25 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('2
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('22', 'Melvina', 'Waelchi', 'travis85@example.net', '713933');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('23', 'Wade', 'Hermiston', 'uconn@example.com', '5267408421');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('24', 'Mia', 'Jast', 'rodger.schuster@example.org', '5209493618');
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('25', 'Corene', 'Emmerich', 'wayne.towne@example.org', '0');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('25', 'Corene', 'Emmerich', 'wayne.towne@example.org', '546346');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('26', 'Arely', 'Spencer', 'waelchi.chasity@example.org', '1');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('27', 'Evan', 'Zemlak', 'rhills@example.com', '5010259343');
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('28', 'Alexandrine', 'King', 'rosella45@example.org', '0');
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('29', 'Adonis', 'Lang', 'danial93@example.com', '0');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('28', 'Alexandrine', 'King', 'rosella45@example.org', '546345645');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('29', 'Adonis', 'Lang', 'danial93@example.com', '5634564');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('30', 'Laron', 'Murazik', 'alanis99@example.com', '693860');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('31', 'Ilene', 'Haley', 'kemmer.clifton@example.com', '1');
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('32', 'Miracle', 'Cummings', 'melvina09@example.org', '0');
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('33', 'Bettie', 'Bernhard', 'ysteuber@example.com', '0');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('32', 'Miracle', 'Cummings', 'melvina09@example.org', '45634565546456');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('33', 'Bettie', 'Bernhard', 'ysteuber@example.com', '3464564565');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('34', 'Carolyn', 'Konopelski', 'uhilpert@example.org', '849170');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('35', 'Rickey', 'Murray', 'bemmerich@example.com', '8056538270');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('36', 'Candida', 'Borer', 'camilla.mccullough@example.org', '418509');
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('37', 'Jacques', 'Mitchell', 'kellie25@example.org', '0');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('37', 'Jacques', 'Mitchell', 'kellie25@example.org', '5463456453');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('38', 'Cleta', 'Boyer', 'frami.lucas@example.com', '74895');
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('39', 'Christine', 'Turner', 'bernier.jayne@example.net', '0');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('39', 'Christine', 'Turner', 'bernier.jayne@example.net', '456456');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('40', 'Lura', 'Dicki', 'ecummerata@example.org', '722325');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('41', 'Dashawn', 'Willms', 'cora68@example.com', '23');
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('42', 'Tyler', 'Altenwerth', 'colby49@example.net', '0');
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('43', 'Nolan', 'Mosciski', 'jziemann@example.org', '0');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('42', 'Tyler', 'Altenwerth', 'colby49@example.net', '5646453');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('43', 'Nolan', 'Mosciski', 'jziemann@example.org', '546456343');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('44', 'Christelle', 'Moen', 'sanford.jules@example.com', '850');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('45', 'Pearlie', 'Armstrong', 'layne.stark@example.net', '1');
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phone`) VALUES ('46', 'Johanna', 'Walsh', 'carmine.medhurst@example.com', '452094');
@@ -273,18 +273,18 @@ INSERT INTO `delivery` (`id`, `order_id`, `address`, `price_fror_delivery`, `del
 
 
 INSERT INTO reviews VALUES
-(NULL, 1, 28, '+', 'Все отлично, спасибо', '2019-08-14 19:51:23'),
-(NULL, 5, 31, '-', 'Все оочень плохо, мне не понравилось', '2020-03-14 12:51:23'),
-(NULL, 8, 10, '+', 'Неплохо, хороший товар.', '2018-07-22 10:51:23'),
-(NULL, 9, 5, '+', 'Спасибо', '2020-06-23 17:51:23'),
-(NULL, 31, 9, '-', 'Я в гневе!', '2020-08-14 16:51:23');
+(NULL, 1, 28, 9, 'Все отлично, спасибо', '2019-08-14 19:51:23'),
+(NULL, 5, 31, 3, 'Все оочень плохо, мне не понравилось', '2020-03-14 12:51:23'),
+(NULL, 8, 10, 7, 'Неплохо, хороший товар.', '2018-07-22 10:51:23'),
+(NULL, 9, 5, 8, 'Спасибо', '2020-06-23 17:51:23'),
+(NULL, 31, 9, 1, 'Я в гневе!', '2020-08-14 16:51:23');
 
 INSERT INTO reviews VALUES
-(NULL, 5, 45, '+', 'Все отлично, спасибо', '2017-08-14 19:51:23'),
-(NULL, 6, 33, '+', 'Все отлично', '2019-03-14 12:51:23'),
-(NULL, 17, 53, '-', 'Неплохо, хороший товар.', '2019-07-22 10:51:23'),
-(NULL, 28, 48, '-', 'Не все так хорошо, как вы пишите', '2015-06-23 17:51:23'),
-(NULL, 42, 9, '-', 'Я не в восторге от этого товара!', '2017-08-14 16:51:23');
+(NULL, 5, 45, 8, 'Все отлично, спасибо', '2017-08-14 19:51:23'),
+(NULL, 6, 33, 10, 'Все отлично', '2019-03-14 12:51:23'),
+(NULL, 17, 53, 6, 'Неплохо, хороший товар.', '2019-07-22 10:51:23'),
+(NULL, 28, 48, 5, 'Не все так хорошо, как вы пишите', '2015-06-23 17:51:23'),
+(NULL, 42, 9, 4, 'Я не в восторге от этого товара!', '2017-08-14 16:51:23');
 
 
 INSERT INTO `discounts` (`id`, `goods_id`, `discount`, `started_at`, `finished_at`) VALUES ('1', '28', '0.1', '2017-07-27 13:15:45', '2018-10-15 21:13:36');

@@ -46,7 +46,7 @@ SELECT users.firstname, users.lastname,orders.price FROM users INNER JOIN orders
 select AVG(price) as average from orders;
 
 -- Посмотрим отрицательные отзывы, чтобы понять над чем работать.
-select * from reviews where like_dislike = '-';
+select * from reviews where goods_rating <= 5;
 
 -- Выберем самый простой проект, если только начинаем заниматься радиоделом.
 select * from projects order by complexity limit 1;

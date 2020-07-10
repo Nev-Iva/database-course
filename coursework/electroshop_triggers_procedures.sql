@@ -96,7 +96,7 @@ DROP TRIGGER IF EXISTS check_orders_value_insert//
 CREATE TRIGGER check_orders_value_insert before INSERT ON orders
 FOR EACH ROW
 BEGIN
-	IF (new.id is NULL) or (new.user_id is NULL) or (new.price is NULL) or (new.created_at is NULL) or (new.received_at is NULL) THEN
+	IF (new.user_id is NULL) or (new.price is NULL) or (new.created_at is NULL) or (new.received_at is NULL) THEN
 		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Insert canceled (null value)';
 	END IF;
 END//
@@ -126,7 +126,7 @@ DROP TRIGGER IF EXISTS check_reviews_value_insert//
 CREATE TRIGGER check_reviews_value_insert before INSERT ON reviews
 FOR EACH ROW
 BEGIN
-	IF (new.user_id is NULL) or (new.goods_id is NULL) or (new.like_dislike is NULL) or (new.review_text is NULL) or (new.created_at is NULL) THEN
+	IF (new.user_id is NULL) or (new.goods_id is NULL) or (new.goods_rating is NULL) or (new.review_text is NULL) or (new.created_at is NULL) THEN
 		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Insert canceled (null value)';
 	END IF;
 END//
@@ -291,15 +291,15 @@ END//
 call cheap_analog('J113');
 
 
--- Чего больше поставили лайков или дислайков?
+-- Чего больше положительных или отрицательных оценок?
 DELIMITER //
 DROP PROCEDURE IF EXISTS reviews_count//
 CREATE PROCEDURE reviews_count ()
 BEGIN
 	declare count_like int;
     declare count_dislike int;
-    set count_like = (select count(id) from reviews where like_dislike = '+');
-	set count_dislike = (select count(id) from reviews where like_dislike = '-');
+    set count_like = (select count(id) from reviews where goods_rating > 5);
+	set count_dislike = (select count(id) from reviews where goods_rating <= 5);
     IF count_like > count_dislike THEN (Select 'Лайков больше'); 
     ELSEIF count_like = count_dislike THEN (Select 'Количество лайков и дислайков одинаково'); 
     ELSE (Select 'Дислайков больше');
@@ -308,5 +308,70 @@ END//
 
 call reviews_count();
 
+
+-- Процедура goods_rating расчета (по оценкам пользователей) и добавления среднего рейтинга товара в таблицу goods. Для этого создана специальная колонка avg_rating. 
+
+ALTER TABLE goods ADD avg_rating Float unsigned;
+
+DELIMITER //
+DROP PROCEDURE IF EXISTS goods_rating//
+CREATE PROCEDURE goods_rating (in rev_id INT)
+BEGIN
+	declare goods_rat float;
+    set goods_rat := (select avg(reviews.goods_rating) from reviews where reviews.goods_id = (select goods.id from goods where goods.id = rev_id));    
+	UPDATE goods SET goods.avg_rating=goods_rat WHERE goods.id = rev_id;
+END//
+
+INSERT INTO reviews VALUES
+(NULL, 5, 45, 9, 'Все отлично, спасибо', '2017-08-14 19:51:23'),
+(NULL, 6, 33, 9, 'Все отлично', '2019-03-14 12:51:23'),
+(NULL, 17, 53, 7, 'Неплохо, хороший товар.', '2019-07-22 10:51:23'),
+(NULL, 28, 48, 4, 'Не все так хорошо, как вы пишите', '2015-06-23 17:51:23'),
+(NULL, 42, 9, 2, 'Я не в восторге от этого товара!', '2017-08-14 16:51:23');
+
+call goods_rating(53);
+
+
+-- Процедура orders_cardholders вносит новый значения в таблицу заказа и для тех у кого есть карта прибавляет сумму покупок и высчитывает сумму накопления (10% от стоимости заказа).
+DELIMITER //
+DROP PROCEDURE IF EXISTS orders_cardholders//
+CREATE PROCEDURE orders_cardholders (IN id INT, IN user_id INT, IN price INT, IN created_at Datetime, IN received_at Datetime)
+BEGIN
+	declare acc_us_id INT;
+	INSERT INTO orders VALUES(id, user_id, price, created_at, received_at);
+    set acc_us_id := (select accounts.user_id from accounts where accounts.user_id = (select users.id from users where users.id = user_id));
+    select acc_us_id;
+    UPDATE cardholders SET cardholders.purchase_amount=(cardholders.purchase_amount + price) WHERE cardholders.acc_id = acc_us_id;
+    UPDATE cardholders SET cardholders.accumulation_amount=(cardholders.purchase_amount *  0.1) WHERE cardholders.acc_id = acc_us_id;
+END//
+
+call orders_cardholders(NULL, 48, 500, '2020-06-17 02:01:30', '2020-06-19 02:01:30');
+
+
+-- Процедура personal_discount "Персональной скидки" по сумме покупок на карте покупателя, 25000 -5%, 50000 -10%, 100000 -15%, 200000 и более 20%.
+DELIMITER //
+DROP PROCEDURE IF EXISTS personal_discount//
+CREATE PROCEDURE personal_discount (IN id INT, IN user_id INT, IN price INT, IN created_at Datetime, IN received_at Datetime)
+BEGIN
+	declare order_disc float;
+    declare card_us_id int;
+	declare purchase_am DECIMAL (11,2);
+    set card_us_id = (select cardholders.acc_id from cardholders where cardholders.acc_id IN (select accounts.user_id from accounts where accounts.user_id IN (select users.id from users where users.id IN (select orders.user_id from orders where orders.user_id = user_id))));
+    set purchase_am = (select purchase_amount from cardholders where cardholders.acc_id = card_us_id);
+    -- select purchase_am;
+	if ((purchase_am >= 25000) and (purchase_am < 50000)) then set order_disc = price * 0.95;
+    ELSEIF ((purchase_am >= 50000) and (purchase_am < 100000)) then set order_disc = price * 0.9;
+    ELSEIF ((purchase_am >= 100000) and (purchase_am < 250000)) then set order_disc = price * 0.85;
+    ELSEIF (purchase_am >= 250000) then set order_disc = price * 0.8; 
+    else set order_disc = price;
+    end if;
+    -- select order_disc;
+	INSERT INTO orders VALUES(id, user_id, order_disc, created_at, received_at);
+END//
+
+call personal_discount(NULL, 2, 6058.31, '2018-08-25 03:07:23', '2018-08-26 12:12:30');
+call personal_discount(NULL, 6, 6058.31, '2018-08-25 03:07:23', '2018-08-26 12:12:30');
+call personal_discount(NULL, 28, 6058.31, '2018-08-25 03:07:23', '2018-08-26 12:12:30');
+call personal_discount(NULL, 20, 6058.31, '2018-08-25 03:07:23', '2018-08-26 12:12:30');
 
 

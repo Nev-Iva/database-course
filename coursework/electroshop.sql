@@ -109,7 +109,7 @@ CREATE TABLE reviews (
   id SERIAL PRIMARY KEY,
   user_id bigint unsigned not null,
   goods_id bigint unsigned not null,
-  like_dislike CHAR(1),
+  goods_rating TINYINT UNSIGNED COMMENT 'Оценка от 1 до 10',
   review_text TEXT COMMENT 'Комментарий к отзыву',
   created_at datetime default now(),
   FOREIGN KEY (user_id) REFERENCES users(id),
